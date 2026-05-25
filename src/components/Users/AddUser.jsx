@@ -1,26 +1,24 @@
-
+import './AddUser.css';
+import Card from '../UI/Card';
 
 const AddUser = () => {
   const addUserHandler = (event) => {
-    event.preventDefault();
-
-    console.log("Form Submitted");
-    
-  }
+    event.preventDefault();    
+  };
 
     return (
+        <Card className="input">
         <form onSubmit={addUserHandler}>
-            <div>
-                <label htmlFor="username">User Name:</label>
+        <label htmlFor="username">Username</label>
                 <input type="text" id="username" />
-            </div>
-            <div>
+
                 <label htmlFor="age">Age:</label>
                 <input type="number" id="age" />
-            </div>
+
             <button type="submit">Add User</button>
         </form>
+        </Card>
     );
-}
+};
 
 export default AddUser;
