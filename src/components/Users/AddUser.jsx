@@ -8,7 +8,7 @@ const AddUser = () => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
-  //
+  //// Change handlers to update state on every keystroke
   const usernameHandler = (event) => {
     setEnteredUsername(event.target.value);
   }
@@ -21,12 +21,15 @@ const AddUser = () => {
   const addUserHandler = (event) => {
     event.preventDefault(); 
     
+    //handling Validating User Inputs
     if(enteredUsername.trim().length === 0 || enteredAge.trim() === 0){
       return;
     }
 
+    //log the value return from form
     console.log(enteredUsername, enteredAge);
 
+    //reset the input field
     setEnteredUsername("");
     setEnteredAge("");
   };
