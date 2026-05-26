@@ -3,7 +3,7 @@ import Card from '../UI/Card';
 import Button from '../UI/Button';
 import { useState } from 'react';
 
-const AddUser = () => {
+const AddUser = (props) => {
   //1:separate useState Hooks for collecting user inputs
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
@@ -26,8 +26,12 @@ const AddUser = () => {
       return;
     }
 
+    if(+enteredAge < 1) {
+      return;
+    }
+
     //log the value return from form
-    console.log(enteredUsername, enteredAge);
+    props.onAddUser(enteredUsername, enteredAge);
 
     //reset the input field
     setEnteredUsername("");
